@@ -14,6 +14,7 @@
     <!-- Esilos dentro de la cabecera. -->
     <style>
         .resaltado {background-color: deeppink}
+        .colorletra {color: lawngreen}
     </style>
 </head>
 
@@ -43,6 +44,26 @@
         Esto es un enlace que me ha salido para poner un link a la página de GamersBeforeDementia.
     </blockquote>
 
+    <!-- La etiqueta pre te formatea el formato de linea e identación que hay entre el bloque -->
+    <pre><span class="colorletra">
+        Texto formateado,
+            otro párrafo para identación.
+                                Super Identación.
+    </span>
+    </pre>
+    <pre><code>
+        def es_primo(numero):
+            if numero < 2:
+                return False
+        for i in range(2, int(numero**0.5) + 1):
+            if numero % i == 0:
+                return False
+        return True
+
+        n = int(input("Ingresa un número: "))
+        print("Es primo" if es_primo(n) else "No es primo")
+    </code>
+    </pre>
 </body>
 
 </html>
