@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo completo: Imágenes y multimedia en HTML</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .galeria { display: flex; gap: 20px; align-items: flex-start; }
+    figure { margin: 0; text-align: center; }
+    figcaption { font-size: 0.95em; color: #555; background: #e3f2fd; }
+    .multimedia { margin-top: 24px; }
+    audio, video { display: block; margin: 16px 0; }
+    .mini-reto { background: #fffde7; padding: 12px; margin-top: 24px;}
+  </style>
+</head>
+<body>
+  <h1>Ejemplo completo: Imágenes y multimedia</h1>
+
+  <h2>Imágenes con atributos</h2>
+  <div class="galeria">
+    <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Vista de Chania" width="160" height="120" title="Foto de Chania">
+    <img src="https://www.w3schools.com/html/img_girl.jpg" alt="Chica con gafas de sol" style="border-radius: 10px; border: 2px solid #1976d2;" loading="lazy">
+    <img src="https://www.w3schools.com/html/img_mountains.jpg" alt="Montañas" width="120" height="80">
+  </div>
+  <p><small>La primera imagen usa <code>width</code> y <code>height</code>. La segunda tiene <code>title</code>, <code>style</code> y <code>loading="lazy"</code>.<br>
+  Todas tienen <code>alt</code> para accesibilidad.</small></p>
+
+  <h2>Imágenes dentro de <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h2>
+  <figure>
+    <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Casa Trulli" width="200">
+    <figcaption>Casa tradicional <strong>Trulli</strong> en Italia.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://www.w3schools.com/html/img_lights.jpg" alt="Luces nocturnas" width="180">
+    <figcaption>Luces de la ciudad al anochecer.</figcaption>
+  </figure>
+
+  <h2>Audio con múltiples fuentes y controles</h2>
+  <audio controls preload="metadata">
+    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+  <p><small>Se usan varias fuentes (<code>&lt;source&gt;</code>) para compatibilidad máxima.<br>
+    El atributo <code>controls</code> añade los botones de reproducción.</small></p>
+
+  <h2>Audio con autoplay, loop y muted</h2>
+  <audio src="https://www.w3schools.com/html/horse.mp3" autoplay loop muted></audio>
+  <p><small>Este audio se reproduce automáticamente, en bucle y sin sonido (<code>muted</code>).</small></p>
+
+  <h2>Vídeo con subtítulos y múltiples fuentes</h2>
+  <video width="320" height="180" controls poster="https://www.w3schools.com/html/img_snow.jpg">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+    <track src="https://www.w3schools.com/html/mov_bbb_subs_en.vtt" kind="subtitles" srclang="en" label="Inglés" default>
+    <track src="https://www.w3schools.com/html/mov_bbb_subs_es.vtt" kind="subtitles" srclang="es" label="Español">
+    Tu navegador no soporta vídeo HTML5.
+  </video>
+  <p>
+    <small>
+      <b>Explicación:</b> <br>
+      - <code>controls</code>: muestra controles del vídeo.<br>
+      - <code>poster</code>: imagen mostrada antes de reproducir.<br>
+      - <code>&lt;source&gt;</code>: archivos alternativos.<br>
+      - <code>&lt;track&gt;</code>: subtítulos disponibles en inglés y español.<br>
+      - <code>width</code>, <code>height</code>: tamaño del reproductor.
+    </small>
+  </p>
+
+  <h2>Mini-reto</h2>
+  <div class="mini-reto">
+    <ol>
+      <li>Añade una imagen a tu página usando un <code>&lt;figure&gt;</code> con <code>&lt;figcaption&gt;</code> propio.</li>
+      <li>Agrega un reproductor de audio con controles, que use dos formatos distintos (<code>mp3</code> y <code>ogg</code>).</li>
+      <li>Agrega un vídeo con subtítulos en dos idiomas usando <code>&lt;track&gt;</code>.</li>
+    </ol>
+  </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo completo: Atributos globales en HTML</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .destacado { color: #1976d2; font-weight: bold; }
+    .tooltip { border-bottom: 1px dotted #1976d2; cursor: help; }
+    .editable { background: #fffde7; border: 1px dashed #fbc02d; padding: 4px 10px;}
+    .arrastrable { background: #e1bee7; padding: 5px 10px; cursor: grab; }
+    .oculto { display: none; }
+    .rtl { direction: rtl; background: #ffe0b2; padding: 4px 10px;}
+    .datos { background: #e3f2fd; margin-top: 8px; padding: 4px 10px;}
+  </style>
+</head>
+<body>
+  <h1 id="titulo" class="destacado" title="Este es el título principal">Ejemplo: Atributos globales en HTML</h1>
+  
+  <p id="parrafo1" class="tooltip" title="Este párrafo tiene un tooltip al pasar el cursor">
+    Pasa el ratón por encima para ver el <b>title</b> en acción.
+  </p>
+  
+  <p lang="en">This text is in English and uses <code>lang="en"</code>.</p>
+  <p lang="ar" dir="rtl" class="rtl">هذا نص باللغة العربية ويُكتب من derecha a izquierda.</p>
+  
+  <div class="editable" contenteditable="true" spellcheck="true" title="Puedes editar este texto (prueba a escribir)">
+    Haz doble clic y escribe aquí. La revisión ortográfica está activada.
+  </div>
+  
+  <div class="editable" contenteditable="true" spellcheck="false" title="Puedes escribir, pero sin revisión ortográfica">
+    Este texto editable <strong>NO</strong> tiene corrector activado.
+  </div>
+  
+  <div class="arrastrable" draggable="true" id="drag1">
+    Arrástrame (usa <code>draggable="true"</code>)
+  </div>
+  
+  <p hidden class="oculto">Este párrafo está oculto gracias al atributo <code>hidden</code>.</p>
+  
+  <div class="datos" data-usuario="42" data-rol="admin">
+    Este div tiene <code>data-usuario="42"</code> y <code>data-rol="admin"</code>.
+    <button onclick="alert('ID usuario: ' + this.parentNode.dataset.usuario)">Mostrar ID usuario</button>
+  </div>
+  
+  <a href="#final" tabindex="1" title="Accede rápidamente con tabulación">Ir al final (usa Tab)</a>
+  
+  <h2 id="final" class="destacado">Fin del ejemplo</h2>
+  <p>
+    <b>Mini-reto:</b>  
+    <ul>
+      <li>Añade un párrafo con <code>contenteditable="true"</code> y prueba a copiar/pegar texto de otro idioma y cambiar <code>lang</code>.</li>
+      <li>Haz que un elemento esté oculto usando el atributo <code>hidden</code> y un botón para mostrarlo (con JavaScript).</li>
+      <li>Agrega un atributo <code>data-*</code> a una imagen y usa JavaScript para mostrarlo en una alerta al hacer clic.</li>
+    </ul>
+  </p>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Elementos obsoletos o en desuso en HTML</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .obsoleto { color: #c62828; background: #ffebee; padding: 5px 12px; margin-bottom: 14px; border-left: 5px solid #b71c1c;}
+    .ejemplo { background: #e3f2fd; padding: 10px 18px; margin: 14px 0;}
+    .nuevo { color: #1976d2; background: #e8f5e9; padding: 3px 8px; border-radius: 3px; }
+    code { background: #fffde7; padding: 2px 5px;}
+  </style>
+</head>
+<body>
+  <h1>Elementos obsoletos o en desuso en HTML</h1>
+  <p class="obsoleto"><b>¡Atención!</b> Las etiquetas y atributos que verás abajo <u>no se deben usar en proyectos modernos</u>. Muchos navegadores las soportan solo para compatibilidad y no forman parte de HTML5.</p>
+  
+  <div class="ejemplo">
+    <h2>Ejemplos de etiquetas obsoletas</h2>
+    <ul>
+      <li><code>&lt;font&gt;</code> — para cambiar color/tamaño de texto<br>
+        <font color="red" size="5">Esto es texto con &lt;font&gt; (no recomendado)</font><br>
+        <span class="nuevo">En su lugar usa CSS: <code>style="color:red; font-size:2em;"</code></span>
+      </li>
+      <li><code>&lt;center&gt;</code> — para centrar contenido<br>
+        <center>Esto está centrado con &lt;center&gt; (no recomendado)</center><br>
+        <span class="nuevo">En su lugar usa CSS: <code>style="text-align:center;"</code></span>
+      </li>
+      <li><code>&lt;marquee&gt;</code> — texto en movimiento<br>
+        <marquee behavior="alternate">¡Texto que se mueve! (no recomendado)</marquee><br>
+        <span class="nuevo">Usa animaciones CSS o JavaScript moderno.</span>
+      </li>
+      <li><code>&lt;big&gt;</code>, <code>&lt;small&gt;</code> (solo <code>&lt;small&gt;</code> es válido en HTML5, pero <code>&lt;big&gt;</code> ya no)<br>
+        <big>Texto grande con &lt;big&gt; (no recomendado)</big><br>
+        <span class="nuevo">Usa CSS: <code>style="font-size:large;"</code></span>
+      </li>
+      <li><code>&lt;strike&gt;</code> — texto tachado<br>
+        <strike>Texto tachado (no recomendado)</strike><br>
+        <span class="nuevo">Usa <code>&lt;del&gt;</code> o CSS: <code>style="text-decoration: line-through;"</code></span>
+      </li>
+      <li><code>&lt;u&gt;</code> — subrayado como presentación (en HTML5 es semántico solo en textos no latinos)<br>
+        <u>Texto subrayado</u><br>
+        <span class="nuevo">En la mayoría de los casos, usa CSS: <code>style="text-decoration: underline;"</code></span>
+      </li>
+      <li><code>&lt;applet&gt;</code>, <code>&lt;acronym&gt;</code>, <code>&lt;blink&gt;</code>, <code>&lt;bgsound&gt;</code>, <code>&lt;dir&gt;</code>, <code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code>, <code>&lt;tt&gt;</code>, etc.<br>
+        <span class="nuevo">No usar nunca. Busca alternativas semánticas y modernas.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ejemplo">
+    <h2>Atributos obsoletos</h2>
+    <ul>
+      <li><code>align</code> — para alinear texto, imágenes o tablas.<br>
+        <img src="https://www.w3schools.com/html/img_girl.jpg" align="right" width="90">
+        <span class="nuevo">Usa CSS: <code>style="float:right;"</code> o <code>style="text-align:right;"</code></span>
+      </li>
+      <li><code>bgcolor</code> — para color de fondo en tablas o celdas.<br>
+        <table bgcolor="#e3f2fd" border="1"><tr><td>Celda</td></tr></table>
+        <span class="nuevo">Usa CSS: <code>style="background:#e3f2fd;"</code></span>
+      </li>
+      <li><code>border</code> en tablas.<br>
+        <table border="3"><tr><td>Con borde</td></tr></table>
+        <span class="nuevo">Usa CSS: <code>style="border: 3px solid #1976d2;"</code></span>
+      </li>
+      <li><code>width</code> y <code>height</code> como atributos en <code>&lt;table&gt;</code>, <code>&lt;td&gt;</code>, etc.<br>
+        <span class="nuevo">Usa CSS para controlar dimensiones.</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="ejemplo">
+    <h2>¿Por qué no debes usar elementos obsoletos?</h2>
+    <ul>
+      <li>No son accesibles ni semánticos.</li>
+      <li>Pueden dejar de funcionar en navegadores futuros.</li>
+      <li>No son compatibles con buenas prácticas de CSS y HTML5.</li>
+      <li>Dificultan el mantenimiento y el posicionamiento (SEO).</li>
+    </ul>
+  </div>
+
+  <div class="ejemplo nuevo">
+    <h2>Mini-reto</h2>
+    <ol>
+      <li>Transforma una línea con <code>&lt;font color="blue"&gt;</code> en código moderno usando <code>&lt;span style="color:blue;"&gt;</code>.</li>
+      <li>Convierte una tabla con <code>border</code> y <code>bgcolor</code> a CSS.</li>
+      <li>Busca una alternativa a <code>&lt;center&gt;</code> y prueba a centrar un título con CSS.</li>
+    </ol>
+  </div>
+</body>
+</html>

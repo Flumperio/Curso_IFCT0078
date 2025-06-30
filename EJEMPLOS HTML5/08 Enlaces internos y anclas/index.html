@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de Enlaces Internos y Anclas</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    nav { background: #e3f2fd; padding: 12px; margin-bottom: 18px; }
+    .seccion { margin-bottom: 48px; padding: 18px; background: #f9fbe7; border-left: 5px solid #9ccc65;}
+    .volver { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <h1>Enlaces internos y anclas en HTML</h1>
+  <nav>
+    <strong>Menú rápido:</strong>
+    <a href="#inicio">Inicio</a> |
+    <a href="#seccion1">Sección 1</a> |
+    <a href="#seccion2">Sección 2</a> |
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <div id="inicio" class="seccion">
+    <h2>Inicio (id="inicio")</h2>
+    <p>Este es el comienzo de la página. Usa el menú para saltar a las secciones.</p>
+    <a href="#contacto" class="volver">Ir directamente a Contacto</a>
+  </div>
+
+  <div id="seccion1" class="seccion">
+    <h2>Sección 1 (id="seccion1")</h2>
+    <p>Esta es la primera sección. El valor de <code>id</code> no lleva <b>#</b> en la etiqueta.</p>
+    <a href="#inicio" class="volver">Volver al inicio</a>
+  </div>
+
+  <div id="seccion2" class="seccion">
+    <h2>Sección 2 (id="seccion2")</h2>
+    <p>Puedes enlazar a cualquier parte de la página usando <code>&lt;a href="#id-destino"&gt;</code> y un elemento con <code>id</code> correspondiente.</p>
+    <a href="#inicio" class="volver">Volver al inicio</a>
+  </div>
+
+  <div id="contacto" class="seccion">
+    <h2>Contacto (id="contacto")</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" name="nombre" type="text"><br>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje"></textarea><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <a href="#inicio" class="volver">Volver al inicio</a>
+  </div>
+
+  <hr>
+  <p class="volver"><a href="#inicio">↑ Volver arriba</a></p>
+
+  <!-- Explicación didáctica -->
+  <section style="background: #e0f2f1; padding: 12px; margin-top: 40px;">
+    <h3>¿Cómo funcionan los enlaces internos?</h3>
+    <ul>
+      <li>Un enlace interno usa <code>&lt;a href="#id-destino"&gt;</code>.</li>
+      <li>El elemento de destino debe tener el atributo <code>id="id-destino"</code>.</li>
+      <li>No se usa <b>#</b> en el atributo <code>id</code>, solo en <code>href</code>.</li>
+      <li>Puedes tener varios enlaces que lleven a la misma ancla.</li>
+    </ul>
+  </section>
+
+  <section style="background: #fffde7; padding: 12px; margin-top: 18px;">
+    <h3>Mini-reto</h3>
+    <ol>
+      <li>Agrega una nueva sección con <code>id="extra"</code> y enlázala desde el menú.</li>
+      <li>Agrega un enlace al final de cada sección para ir a “Contacto”.</li>
+      <li>Crea un enlace “Volver arriba” al final de la página.</li>
+    </ol>
+  </section>
+</body>
+</html>

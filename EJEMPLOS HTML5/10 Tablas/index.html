@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo completo de tablas en HTML</title>
+  <style>
+    table { border-collapse: collapse; width: 90%; margin-bottom: 28px; }
+    caption { font-weight: bold; font-size: 1.1em; background: #e3f2fd; padding: 8px; }
+    th, td { border: 1px solid #1976d2; padding: 8px 14px; text-align: left; }
+    thead { background: #bbdefb; }
+    tfoot { background: #ffe082; font-weight: bold; }
+    .num { text-align: right; }
+    .resumen { background: #f3e5f5; }
+    .subtitulo { background: #e1bee7; font-style: italic;}
+  </style>
+</head>
+<body>
+  <h1>Ejemplo completo: Tablas en HTML</h1>
+
+  <table>
+    <caption>Notas finales de estudiantes</caption>
+    <colgroup>
+      <col style="background:#e0f7fa;">
+      <col span="2">
+      <col style="background:#f8bbd0;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Asignatura</th>
+        <th scope="col">Nota</th>
+        <th scope="col">Observaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">Ana</td>
+        <td>Matemáticas</td>
+        <td class="num">8.5</td>
+        <td rowspan="2" class="subtitulo">Participación excelente</td>
+      </tr>
+      <tr>
+        <td>Lengua</td>
+        <td class="num">9</td>
+        <!-- Observaciones ya ocupada por rowspan -->
+      </tr>
+      <tr>
+        <td>Pedro</td>
+        <td>Matemáticas</td>
+        <td class="num">6.5</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Lucía</td>
+        <td colspan="2" class="resumen">Dispensada</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="subtitulo">Segunda evaluación</td>
+      </tr>
+      <tr>
+        <td>Ana</td>
+        <td>Física</td>
+        <td class="num">7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Pedro</td>
+        <td>Física</td>
+        <td class="num">8</td>
+        <td>Mejorando</td>
+      </tr>
+      <tr>
+        <td>Lucía</td>
+        <td>Física</td>
+        <td class="num">9.5</td>
+        <td></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total de alumnos</td>
+        <td colspan="2">3</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Tabla con resumen de ventas usando scope y resumen</h2>
+  <table summary="Resumen de ventas mensuales por producto y total general">
+    <caption>Ventas mensuales</caption>
+    <thead>
+      <tr>
+        <th scope="col">Producto</th>
+        <th scope="col">Enero</th>
+        <th scope="col">Febrero</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Cuadernos</th>
+        <td class="num">120</td>
+        <td class="num">135</td>
+        <td class="num">255</td>
+      </tr>
+      <tr>
+        <th scope="row">Lápices</th>
+        <td class="num">200</td>
+        <td class="num">210</td>
+        <td class="num">410</td>
+      </tr>
+      <tr>
+        <th scope="row">Mochilas</th>
+        <td class="num">65</td>
+        <td class="num">70</td>
+        <td class="num">135</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total general</td>
+        <td class="num">800</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <h2>Mini-reto</h2>
+  <ul>
+    <li>Añade una nueva columna llamada “Curso” y rellénala para cada alumno.</li>
+    <li>Crea una tabla con `<thead>`, `<tbody>`, `<tfoot>`, `<colgroup>` y utiliza al menos un `rowspan` y un `colspan`.</li>
+    <li>Añade una tabla de resumen de cualquier otro tema (ej: gastos familiares, deportes, etc.)</li>
+  </ul>
+</body>
+</html>

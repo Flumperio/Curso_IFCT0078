@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo completo de listas en HTML</title>
+  <style>
+    .color { color: #1565c0; }
+    .destacado { font-weight: bold; background: #fce4ec; }
+    dt { color: #00796b; }
+    dd { margin-left: 24px; }
+    .lista-anidada { background: #e3f2fd; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo completo de listas en HTML</h1>
+
+  <h2>1. Lista desordenada (&lt;ul&gt;)</h2>
+  <ul>
+    <li>Elemento uno</li>
+    <li>Elemento dos</li>
+    <li>Elemento tres
+      <ul class="lista-anidada">
+        <li>Sub-elemento a</li>
+        <li>Sub-elemento b
+          <ul>
+            <li>Sub-sub-elemento 1</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="destacado">Elemento destacado con clase</li>
+  </ul>
+
+  <h2>2. Lista ordenada (&lt;ol&gt;) con type, start, reversed</h2>
+  <ol type="A" start="3" reversed>
+    <li>Elemento A</li>
+    <li>Elemento B</li>
+    <li>Elemento C</li>
+  </ol>
+
+  <h2>3. Lista ordenada con value</h2>
+  <ol>
+    <li value="10">Empieza en 10</li>
+    <li value="15">Ahora salta a 15</li>
+    <li>Siguiente automáticamente</li>
+  </ol>
+
+  <h2>4. Lista mixta: ol dentro de ul</h2>
+  <ul>
+    <li>Primer elemento</li>
+    <li>
+      Lista ordenada dentro:
+      <ol type="i">
+        <li>Uno</li>
+        <li>Dos</li>
+      </ol>
+    </li>
+    <li>Último elemento</li>
+  </ul>
+
+  <h2>5. Lista de definiciones (&lt;dl&gt;)</h2>
+  <dl>
+    <dt>HTML</dt>
+    <dd>Lenguaje de marcado para la web.</dd>
+    <dt class="color">CSS</dt>
+    <dd class="destacado">Lenguaje de estilos para diseñar páginas.</dd>
+    <dt>JavaScript</dt>
+    <dd>Lenguaje de programación para la web.</dd>
+  </dl>
+
+  <h2>6. Accesibilidad y atributos globales</h2>
+  <ul id="lista-accesible" class="color" title="Lista de ejemplo con atributos globales">
+    <li tabindex="0">Elemento navegable con teclado</li>
+    <li>Elemento normal</li>
+  </ul>
+
+  <h2>7. Mini-reto</h2>
+  <ol>
+    <li>Crea una lista desordenada de tus comidas favoritas. Dentro de un elemento, pon una lista ordenada con tus postres favoritos.</li>
+    <li>Haz una lista de definiciones con al menos tres términos técnicos.</li>
+  </ol>
+
+</body>
+</html>

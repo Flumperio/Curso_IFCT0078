@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de Etiquetas de Bloque y en Línea</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .bloque     { background: #e3f2fd; padding: 8px; margin-bottom: 10px; border-left: 5px solid #1976d2;}
+    .enlinea    { background: #fffde7; padding: 2px 6px; border-radius: 5px;}
+    .demo       { border: 1px solid #aaa; padding: 12px; background: #fafafa; margin: 12px 0;}
+    .ejemplo-incorrecto { background: #ffebee; color: #c62828; padding: 8px; border: 1px dashed #c62828;}
+  </style>
+</head>
+<body>
+  <h1>Ejemplo: Etiquetas de bloque y en línea</h1>
+  
+  <!-- Ejemplo de etiquetas de bloque -->
+  <div class="bloque">
+    <h2>Ejemplos de etiquetas <strong>de bloque</strong></h2>
+    <p>Las etiquetas de bloque ocupan todo el ancho disponible y generan salto de línea antes y después.</p>
+    <ul>
+      <li>&lt;h1&gt; a &lt;h6&gt;</li>
+      <li>&lt;p&gt; (párrafo)</li>
+      <li>&lt;div&gt; (contenedor genérico)</li>
+      <li>&lt;ul&gt; / &lt;ol&gt; (listas)</li>
+      <li>&lt;li&gt; (elemento de lista)</li>
+      <li>&lt;table&gt; (tabla)</li>
+      <li>&lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;, &lt;nav&gt;, &lt;blockquote&gt;, &lt;form&gt;, &lt;hr&gt;...</li>
+    </ul>
+    <div class="demo">
+      <h3>Bloque 1</h3>
+      <p>Este es un párrafo dentro de un &lt;div&gt; de bloque.</p>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+      </ul>
+      <hr>
+      <blockquote>Esto es una cita larga con &lt;blockquote&gt;.</blockquote>
+    </div>
+  </div>
+  
+  <!-- Ejemplo de etiquetas en línea -->
+  <div class="bloque">
+    <h2>Ejemplos de etiquetas <strong>en línea</strong></h2>
+    <p>Las etiquetas en línea <span class="enlinea">no generan saltos de línea</span> y solo ocupan el espacio necesario.</p>
+    <p>
+      <strong>Negrita</strong>,
+      <em>Cursiva</em>,
+      <span class="enlinea">Span</span>,
+      <a href="#">Enlace</a>,
+      <code>código</code>,
+      <mark>resaltado</mark>,
+      <small>texto pequeño</small>,
+      <abbr title="Lenguaje de marcado de hipertexto">HTML</abbr>,
+      <b>visual bold</b>,
+      <i>visual italic</i>,
+      <u>subrayado</u>,
+      <sup>superíndice</sup>,
+      <sub>subíndice</sub>,
+      <label>label</label>,
+      <input type="text" value="input">
+      <img src="https://via.placeholder.com/24" alt="Imagen en línea">
+      <br>(el salto de línea &lt;br&gt; es en línea pero fuerza un salto)
+    </p>
+    <p>Se pueden anidar varias etiquetas en línea, por ejemplo:
+      <mark><strong><em>¡Mucho énfasis!</em></strong></mark>
+    </p>
+  </div>
+  
+  <!-- Ejemplo de anidación correcta -->
+  <div class="bloque">
+    <h2>Anidación correcta: bloque contiene en línea</h2>
+    <p>
+      <span class="enlinea">Esto</span> es un párrafo (<code>&lt;p&gt;</code>) con muchas etiquetas en línea: 
+      <b>negrita</b>, <i>cursiva</i> y <mark>resaltado</mark>.
+    </p>
+  </div>
+  
+  <!-- Ejemplo de anidación incorrecta (para explicar limitaciones) -->
+  <div class="ejemplo-incorrecto">
+    <strong>Incorrecto (solo para mostrar):</strong><br>
+    &lt;span&gt;
+      <h2>No se debe poner un título dentro de span</h2>
+    &lt;/span&gt;<br>
+    <em>En HTML5, los navegadores lo corrigen, pero no es correcto.</em>
+  </div>
+  
+  <div class="bloque">
+    <h2>Mini-reto</h2>
+    <ol>
+      <li>Crea un nuevo &lt;div&gt; y pon dentro varios párrafos y listas.</li>
+      <li>Resalta algunas palabras usando &lt;span&gt;, &lt;mark&gt; o &lt;strong&gt;.</li>
+      <li>Intenta anidar un &lt;p&gt; dentro de un &lt;span&gt; y observa el resultado.</li>
+    </ol>
+  </div>
+</body>
+</html>

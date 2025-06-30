@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de texto y formato en HTML</title>
+  <style>
+    .resaltado { background: yellow; }
+    .importante { color: red; }
+    .cita { font-style: italic; }
+  </style>
+</head>
+<body>
+  <!-- Títulos y subtítulos -->
+  <h1 class="importante" id="titulo-principal">Título Principal</h1>
+  <h2>Título Secundario</h2>
+  <h3>Título de tercer nivel</h3>
+  <h4>Título de cuarto nivel</h4>
+  <h5>Título de quinto nivel</h5>
+  <h6>Título de sexto nivel</h6>
+
+  <!-- Párrafo con salto de línea, subíndice y superíndice -->
+  <p id="parrafo-intro">
+    Este es un <strong>párrafo</strong> de <em>ejemplo</em>.<br>
+    Incluye un salto de línea y muestra la fórmula del agua: H<sub>2</sub>O,
+    y la ecuación de Einstein: E=mc<sup>2</sup>.
+  </p>
+  
+  <!-- Span para destacar parte del texto -->
+  <p>Podemos <span class="resaltado">resaltar</span> palabras en línea.</p>
+
+  <!-- Citas largas y cortas -->
+  <blockquote cite="https://es.wikipedia.org/wiki/HTML" class="cita">
+    HTML (del inglés HyperText Markup Language) es el lenguaje de marcado...
+  </blockquote>
+  <p>Como dijo Turing: <q cite="https://es.wikipedia.org/wiki/Alan_Turing">Las máquinas pueden pensar.</q></p>
+
+  <!-- Texto preformateado y código -->
+  <pre>
+    Línea 1
+        Línea 2 (con espacios)
+    Línea 3
+  </pre>
+  <p>Para imprimir en consola: <code>console.log("Hola mundo");</code></p>
+
+  <!-- Énfasis y presentación -->
+  <p>
+    <em>Texto en cursiva por énfasis.</em>
+    <strong>Texto en negrita por importancia.</strong>
+    <b>Negrita solo visual.</b>
+    <i>Cursiva solo visual.</i>
+    <u>Texto subrayado (visual).</u>
+    <mark>Texto resaltado con <mark>mark</mark>.</mark>
+    <small>Nota al pie de página.</small>
+  </p>
+
+  <!-- Abreviaturas y citas de fuentes -->
+  <p>
+    El <abbr title="World Wide Web">WWW</abbr> revolucionó la informática.
+    Según <cite>El Quijote</cite>, <q>No hay libro tan malo...</q>
+  </p>
+
+  <!-- Texto eliminado y añadido -->
+  <p>
+    <del cite="https://ejemplo.com/cambios" datetime="2023-06-01">Este texto fue eliminado.</del>
+    <ins cite="https://ejemplo.com/cambios" datetime="2025-06-26">Este texto es nuevo.</ins>
+  </p>
+</body>
+</html>

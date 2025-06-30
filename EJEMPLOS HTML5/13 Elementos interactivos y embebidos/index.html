@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo completo: Elementos interactivos y embebidos</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    details { margin-bottom: 18px; background: #e3f2fd; padding: 8px 14px; border-radius: 6px; }
+    summary { cursor: pointer; font-weight: bold; }
+    iframe, embed, object { display: block; margin: 14px 0; border: 2px solid #bbdefb; }
+    canvas { background: #fffde7; border: 1px solid #ffd600; margin: 10px 0; }
+    svg { display: block; margin: 14px 0; background: #f3e5f5; }
+    .mini-reto { background: #fffde7; padding: 12px; margin-top: 28px;}
+    .boton { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo completo: Elementos interactivos y embebidos</h1>
+
+  <h2>&lt;details&gt; y &lt;summary&gt;</h2>
+  <details open>
+    <summary>Haz clic para ver más información</summary>
+    <p>Este texto se puede ocultar o mostrar. <br>
+      Utiliza <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code> para crear bloques expandibles.</p>
+  </details>
+
+  <h2>&lt;dialog&gt; (Cuadro de diálogo/modal)</h2>
+  <button onclick="document.getElementById('ventana').showModal()" class="boton">Abrir ventana modal</button>
+  <dialog id="ventana">
+    <p><strong>¡Hola! Esto es un cuadro de diálogo nativo.</strong></p>
+    <button onclick="document.getElementById('ventana').close()">Cerrar</button>
+  </dialog>
+
+  <h2>&lt;iframe&gt; (Incrustar otra página)</h2>
+  <iframe src="https://es.wikipedia.org/wiki/HTML5" width="400" height="160" title="Wikipedia HTML5"></iframe>
+
+  <h2>&lt;embed&gt; (PDF, vídeo, etc.)</h2>
+  <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" type="application/pdf" width="300" height="180">
+
+  <h2>&lt;object&gt; (Contenido externo)</h2>
+  <object data="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" width="250" height="40">
+    Tu navegador no soporta el objeto incrustado.
+  </object>
+  <object data="https://www.w3schools.com/html/pic_trulli.jpg" type="image/jpeg" width="220" height="140">
+    Imagen alternativa
+  </object>
+
+  <h2>&lt;canvas&gt; (Gráficos con JS)</h2>
+  <canvas id="miCanvas" width="250" height="120">Tu navegador no soporta canvas.</canvas>
+  <script>
+    const canvas = document.getElementById('miCanvas');
+    const ctx = canvas.getContext('2d');
+    // Dibuja un rectángulo azul
+    ctx.fillStyle = "#1976d2";
+    ctx.fillRect(10, 20, 100, 60);
+    // Dibuja un círculo rojo
+    ctx.beginPath();
+    ctx.arc(170, 60, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = "#e53935";
+    ctx.fill();
+    ctx.closePath();
+    // Texto
+    ctx.fillStyle = "#000";
+    ctx.font = "16px Arial";
+    ctx.fillText("Canvas demo", 70, 110);
+  </script>
+
+  <h2>&lt;svg&gt; (Gráficos vectoriales)</h2>
+  <svg width="300" height="110">
+    <rect x="10" y="20" width="100" height="60" fill="#1976d2"/>
+    <circle cx="200" cy="60" r="40" fill="#e53935" stroke="#333" stroke-width="2"/>
+    <text x="80" y="105" font-size="18" fill="#333">SVG demo</text>
+    <line x1="10" y1="20" x2="200" y2="100" stroke="#43a047" stroke-width="3"/>
+  </svg>
+
+  <div class="mini-reto">
+    <h3>Mini-reto</h3>
+    <ol>
+      <li>Añade un segundo <code>&lt;details&gt;</code> con una lista dentro.</li>
+      <li>Prueba a incrustar un vídeo de YouTube usando <code>&lt;iframe&gt;</code>.</li>
+      <li>Dibuja un nuevo círculo en el <code>&lt;canvas&gt;</code> o cambia su color.</li>
+    </ol>
+  </div>
+</body>
+</html>

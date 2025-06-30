@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo completo: Formularios e interacción</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    form { background: #e3f2fd; padding: 20px; border-radius: 8px; max-width: 540px; }
+    fieldset { border: 1.5px solid #1976d2; margin-bottom: 16px; padding: 12px; }
+    legend { background: #bbdefb; padding: 3px 10px; border-radius: 6px; font-weight: bold;}
+    label { display: block; margin-top: 10px; font-weight: bold;}
+    input, select, textarea, button { margin-top: 5px; margin-bottom: 12px; width: 100%; max-width: 350px;}
+    .mini { width: 40px; }
+    .resultado, .progreso, .nivel { margin-top: 20px; }
+    .opciones { margin-top: 0; margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo completo: Formularios e interacción</h1>
+  <form action="/procesar.php" method="post" enctype="multipart/form-data" autocomplete="on">
+    <fieldset>
+      <legend>Datos personales</legend>
+      <label for="nombre">Nombre <span style="color:red">*</span></label>
+      <input id="nombre" name="nombre" type="text" placeholder="Escribe tu nombre" required maxlength="25">
+      
+      <label for="email">Correo electrónico</label>
+      <input id="email" name="email" type="email" placeholder="usuario@correo.com" required>
+      
+      <label for="fecha">Fecha de nacimiento</label>
+      <input id="fecha" name="fecha" type="date" min="1950-01-01" max="2025-12-31">
+    </fieldset>
+
+    <fieldset>
+      <legend>Opciones e intereses</legend>
+      
+      <label for="pais">País</label>
+      <select id="pais" name="pais" required>
+        <option value="">--Selecciona--</option>
+        <option value="es">España</option>
+        <option value="mx">México</option>
+        <option value="ar" disabled>Argentina (no disponible)</option>
+        <option value="cl">Chile</option>
+        <optgroup label="Europa">
+          <option value="fr">Francia</option>
+          <option value="it">Italia</option>
+        </optgroup>
+      </select>
+      
+      <label>Sexo</label>
+      <input type="radio" name="sexo" value="h" id="sexo-h" checked>
+      <label for="sexo-h" class="opciones">Hombre</label>
+      <input type="radio" name="sexo" value="m" id="sexo-m">
+      <label for="sexo-m" class="opciones">Mujer</label>
+
+      <label>Intereses</label>
+      <input type="checkbox" name="interes" value="deporte" id="deporte">
+      <label for="deporte" class="opciones">Deporte</label>
+      <input type="checkbox" name="interes" value="musica" id="musica">
+      <label for="musica" class="opciones">Música</label>
+      <input type="checkbox" name="interes" value="lectura" id="lectura" checked>
+      <label for="lectura" class="opciones">Lectura</label>
+
+      <label for="color">Color favorito (con datalist)</label>
+      <input type="text" id="color" name="color" list="colores" placeholder="Escribe o elige">
+      <datalist id="colores">
+        <option value="Azul">
+        <option value="Rojo">
+        <option value="Verde">
+        <option value="Amarillo">
+      </datalist>
+    </fieldset>
+
+    <fieldset disabled>
+      <legend>Solo lectura / deshabilitado</legend>
+      <label for="comentario">Comentario</label>
+      <textarea id="comentario" name="comentario" placeholder="Este campo está deshabilitado"></textarea>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Subir archivo</legend>
+      <label for="cv">Adjuntar CV</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.docx">
+    </fieldset>
+
+    <fieldset>
+      <legend>Campos numéricos, patrón y otros</legend>
+      <label for="edad">Edad (18-99)</label>
+      <input id="edad" name="edad" type="number" min="18" max="99" step="1" class="mini">
+
+      <label for="usuario">Usuario (solo letras, min 3)</label>
+      <input id="usuario" name="usuario" type="text" pattern="[A-Za-z]{3,}" title="Solo letras, mínimo 3">
+
+      <label for="progreso">Progreso de formulario</label>
+      <progress id="progreso" value="70" max="100"></progress>
+      <span class="progreso">70%</span>
+
+      <label for="nivel">Nivel de satisfacción</label>
+      <meter id="nivel" min="0" max="10" value="7" low="3" high="8" optimum="9"></meter>
+      <span class="nivel">7/10</span>
+    </fieldset>
+
+    <fieldset>
+      <legend>Resultado automático (output)</legend>
+      <label for="a">Número A</label>
+      <input type="number" id="a" name="a" value="2" onchange="calculaSuma()" class="mini">
+      <label for="b">Número B</label>
+      <input type="number" id="b" name="b" value="3" onchange="calculaSuma()" class="mini">
+      <button type="button" onclick="calculaSuma()">Sumar</button>
+      <output id="resultado" for="a b">5</output>
+    </fieldset>
+    
+    <button type="submit">Enviar</button>
+    <button type="reset">Limpiar</button>
+  </form>
+  
+  <script>
+    function calculaSuma() {
+      var a = parseFloat(document.getElementById('a').value) || 0;
+      var b = parseFloat(document.getElementById('b').value) || 0;
+      document.getElementById('resultado').value = a + b;
+    }
+  </script>
+
+  <h2>Mini-reto</h2>
+  <ul>
+    <li>Añade un campo "Contraseña" con <code>type="password"</code> y atributo <code>required</code>.</li>
+    <li>Haz que el botón "Enviar" esté deshabilitado hasta que el usuario escriba su nombre.</li>
+    <li>Agrega un <code>output</code> que muestre el número de caracteres escritos en el campo "usuario".</li>
+  </ul>
+</body>
+</html>
