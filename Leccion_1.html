@@ -15,6 +15,9 @@
     <style>
         .resaltado {background-color: deeppink}
         .colorletra {color: lawngreen}
+        .realtado_Letra {color: orangered}
+        .Typo_Enunciado {font-family: Roboto, sans-serif; font-weight: bolder}
+        .Typo_Descripcion {font-family: Monaco, sans-serif  ; font-size: xx-small}
     </style>
 </head>
 
@@ -89,16 +92,71 @@
         </ins>
     </p>
 
-    <ul>
-        <li>Item 1</li>
+    <ul> <!-- Lista desordenada. OJO con las anidaciones. Van dentro de cada Item y no se cierra la etiqueta li-->
+        <li>Item 1
+            <ul type="bullet">
+                <li>Sub Item 1</li>
+                <li>Sub Item 2</li>
+                <li><em>Sub Item 3</em>
+                    <ul class="colorletra" style="list-style-type: square">
+                        <li><strong>Sub-Sub Item 1</strong></li>
+                        <li>Sub-Sub Item 2</li>
+                        <li>Sub-Sub Item 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
         <li>Item 2</li>
         <li>Item 3</li>
         <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
-        <li>Item 7</li>
-        <li>Item 8</li>
     </ul>
+
+    <ol class="realtado_Letra" type="A"> <!-- Lista ordenada. -->
+        <li>Item 1</li>
+        <li><em>Item 2</em>
+            <ol type="a">
+                <li value="10">Sub Item 1</li> <!-- El parametro value va en el primer valor de la lista e indica el primer valor que toman los elementos. -->
+                <li>Sub Item 2</li>
+                <li><em>Sub Item 3</em>
+                    <ol type="I" reversed>
+                        <li value="5">Sub-Sub Item 1</li>
+                        <li>Sub-Sub Item 2</li>
+                        <li>Sub-Sub Item 3
+                            <ul>
+                                <li>Desordenado 1</li>
+                                <li>Desordenado 2</li>
+                                <li>Desordenado 3</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ol>
+    <br>
+    <p> <strong>Definiciones, consta de un elemento y una descripción</strong> </p>
+    <dl>
+        <dt class="Typo_Enunciado">Item 1</dt>
+        <dd>
+            <ol class="Typo_Descripcion" type="I">
+                <li>Definición 1</li>
+                <li>Definición 2</li>
+                <li>Definición 3</li>
+            </ol>
+        </dd>
+        <dt class="Typo_Enunciado">Item 2</dt>
+        <dd>
+            <ol class="Typo_Descripcion" type="I" reversed>
+                <li>Descripción 1</li>
+                <li>Descripción 2</li>
+            </ol>
+        </dd>
+        <dt class="Typo_Enunciado">Item 3</dt>
+        <dd class="Typo_Descripcion">Descirpción del Item 3</dd>
+    </dl>
 
 </body>
 
